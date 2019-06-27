@@ -176,6 +176,20 @@ npm 2.x安装依赖方式比较简单直接，以递归的方式按照包依赖�
  }
 ```
 
+npm 脚本的原理非常简单。每当执行`npm run`，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。
+
+比较特别的是，`npm run`新建的这个 Shell，会将当前目录的`node_modules/.bin`子目录加入`PATH`变量，执行结束后，再将`PATH`变量恢复原样。
+
+### npx
+
+npx 的使用很简单，就是执行 `npx <command>` 即可，这里的 `<command>` 默认就是 `./node_modules` 目录中安装的可执行脚本名。例如本地安装好的 webpack 包，我们可以直接使用 `npx webpack` 执行即可。
+
+[npx 使用教程](http://www.ruanyifeng.com/blog/2019/02/npx.html)
+
+```javascript
+npx workin-hard(彩蛋)
+```
+
 ### 4、发布一个npm包
 
 ----
@@ -187,6 +201,12 @@ npm 2.x安装依赖方式比较简单直接，以递归的方式按照包依赖�
 5. 添加单元测试；
 6. 完善README.md；
 7. 发布。
+
+```javascript
+npm adduser/npm login
+npm publish --access=public
+npm version major/minor/patch
+```
 
 ```javascript
 npm version 
@@ -214,13 +234,32 @@ npm publish
 
 修订号：当你做了向后兼容的问题修正；
 
+#### Scoped Packages 域级包
+
+```javascript
+@babel/core
+@babel/runtime
+@babel/cli
+...
+```
+
+npm 会在用户注册账号的时候为其自动创建一个与用户名同名的 scope，之后用户也可以创建其他的 Org 作为 scope。 
+
+```javascript
+npm config get scope
+npm config set scope username
+
+mkdir [file name] && cd [file name]
+npm init --scoped=[username]
+```
+
 ### 5、npm 和 yarn
 
 ----
 
 ##### npm 5.0之前：
 
-yarn缓存强于npm，具有lock特性，多线程下载
+yarn缓存强于npm，具有lock特性，多线程下载，据测试，当时速度是npm的20倍左右
 
 ##### 5.0之后：
 
@@ -229,3 +268,11 @@ npm缓存改善，加入包lock，速度和yarn基本持平（可能略微慢一
 
 
 npm活跃度高，官方更新速度及时，yarn更新较慢
+
+
+
+## npm 对于 Web 开发来说至关重要
+
+在 2014 年 npm 刚成立时，一些树通常只包含几十个 JavaScript 包。而到了现在，普通的现代 Web 应用程序通常会有 1000 多个模块，包含超过 2000 个模块的树也并不少见。实际上，现代 Web 应用程序中有 97％的代码来自 npm。
+
+**一个开发者只负责最终的 3％代码，它们是应用程序独有的代码。**
