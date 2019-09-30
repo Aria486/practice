@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>TYPESCRIPT</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../dist/hello.js"></script>
+    <div id="root"></div>
+
+    <script type="text/javascript">
+      // const typeScript = new Hello(222, 'test');
+      const extendHello = new MiniHello(222, '111');
+      console.log(extendHello.head());
+      // var button = document.createElement('button');
+      // button.textContent = 'hello';
+      // button.onclick = () => {
+      //   const r = document.getElementById('root');
+      //   r.innerHTML = typeScript.say();
+      //   typeScript.alertName('typeScript');
+      // }
+      // document.body.appendChild(button);
+    </script>
+  </body>
+</html>

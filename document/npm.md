@@ -204,7 +204,7 @@ npx workin-hard(彩蛋)
 
 ```javascript
 npm adduser/npm login
-npm publish --access=public
+npm publish [--access=public]
 npm version major/minor/patch
 ```
 
@@ -249,7 +249,6 @@ npm 会在用户注册账号的时候为其自动创建一个与用户名同名�
 npm config get scope
 npm config set scope username
 
-mkdir [file name] && cd [file name]
 npm init --scoped=[username]
 ```
 
@@ -259,15 +258,15 @@ npm init --scoped=[username]
 
 ##### npm 5.0之前：
 
-yarn缓存强于npm，具有lock特性，多线程下载，据测试，当时速度是npm的20倍左右
+yarn缓存强于npm，具有lock特性，并发下载
 
 ##### 5.0之后：
 
-npm缓存改善，加入包lock，速度和yarn基本持平（可能略微慢一点）
+npm缓存改善，加入包lock，速度还是慢于yarn
+
+npm更新速度及时，yarn更新较慢
 
 
-
-npm活跃度高，官方更新速度及时，yarn更新较慢
 
 
 
