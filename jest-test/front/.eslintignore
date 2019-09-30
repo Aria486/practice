@@ -1,0 +1,8 @@
+/build/**
+/coverage/**
+/ci/**
+/node_modules/**
+/src/**/*.test.js
+/src/**/testUtils.js
+## lib sourceCode overrideのため ignoewする
+/src/modules/inquiry/components/GuestInfo/request.js

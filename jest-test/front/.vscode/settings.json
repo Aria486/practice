@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.packageManager": "yarn",
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "coverage-gutters.showLineCoverage": true,
+  "path-autocomplete.extensionOnImport": true,
+  "prettier.disableLanguages": ["vue", "markdown"],
+}

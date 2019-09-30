@@ -1,0 +1,11 @@
+{
+  "presets": ["react-app"],
+  "env": {
+    "test": {
+      "plugins": [
+        "babel-plugin-transform-async-to-generator",
+        "babel-plugin-rewire"
+      ]
+    }
+  }
+}

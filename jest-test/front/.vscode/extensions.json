@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "robinbentley.sass-indented",
+    "timonvs.reactsnippetsstandard",
+    "esbenp.prettier-vscode",
+    "hookyqr.beautify",
+    "dbaeumer.vscode-eslint",
+    "andys8.jest-snippets",
+    "kyleengler.docthis-shockoe",
+    "ofhumanbondage.react-proptypes-intellisense",
+    "ionutvmi.path-autocomplete",
+    "mrmlnc.vscode-scss"
+  ]
+}
